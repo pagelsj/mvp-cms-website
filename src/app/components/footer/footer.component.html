@@ -1,0 +1,17 @@
+<section class="footer">
+  <div class="container">
+    <div class="row row-cols-sm-1 row-cols-md-2">
+
+      <div class="col-12 col-md-4">
+        <a href="/"><img src="assets/iamArla-white.svg" class="logo" /></a>
+      </div>
+
+      <nav class="nav col align-self-center align-self-md-end">
+        <span *ngFor="let item of navigation" class="nav__item">
+          <a [routerLink]="item.link" class="nav__item--link">{{item.label}}</a>
+        </span>
+      </nav>
+
+    </div>
+  </div>
+</section>

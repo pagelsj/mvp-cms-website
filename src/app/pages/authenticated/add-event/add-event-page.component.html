@@ -1,0 +1,135 @@
+<section class="add-event-page">
+
+  <div class="image-container">
+    <google-map
+      height="100%"
+      width="100%"
+      [center]="center"
+    ></google-map>
+    <!-- <image-upload
+      [config]="newEventConfig"
+      [selectedImage]="contentImageUrl"
+      (imageUrl)="profileImage($event)"></image-upload> -->
+  </div>
+
+  <form [formGroup]="eventForm" (ngSubmit)="onSubmit()">
+
+    <section class="page-layout page-layout--first">
+      <div class="row">
+        <div class="col-2">Title:</div>
+        <div class="col">
+          <input type="text" formControlName="title" placeholder="Title">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-2">About:</div>
+        <div class="col">
+          <quill-editor formControlName="about" placeholder="About"></quill-editor>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-2">Price (£):</div>
+        <div class="col-3">
+          <input type="text" formControlName="price" placeholder="Price">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-2">Location:</div>
+        <div class="col-3">
+          <input type="text" formControlName="eventLocation" placeholder="Location">
+        </div>
+        <div class="col-1">
+          <a (click)="geoEncode()" class="button">Save</a>
+        </div>
+
+        <!-- <div class="col-7">
+          <google-map
+            height="100%"
+            width="100%"
+          ></google-map>
+        </div> -->
+      </div>
+
+      <div class="row">
+        <div class="col-2">
+          <label for="dob">Date:</label>
+        </div>
+        <div class="col-3">
+          <input type="text" formControlName="eventDate" placeholder="dd/mm/yy" bsDatepicker>
+        </div>
+      </div>
+
+      <div class="row align-items-center">
+        <div class="col-2">Time:</div>
+        <div class="col-4">
+          <timepicker formControlName="timeStart"></timepicker>
+        </div>
+        until
+        <div class="col-4">
+          <timepicker formControlName="timeEnd"></timepicker>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-2">Speaker:</div>
+        <div class="col-3">
+          <input type="text" formControlName="speaker" placeholder="Speaker">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-2">Capacity:</div>
+        <div class="col-3">
+          <input type="number" formControlName="eventCapacity" placeholder="Capacity">
+        </div>
+      </div>
+
+      <div class="row">
+        <h3 class="col">Tags</h3>
+      </div>
+
+      <div class="row">
+        <label
+          class="col-4"
+          formArrayName="tags"
+          *ngFor="let tag of eventForm.get('tags')['controls']; let i = index">
+
+          <input type="checkbox" [checked]="tags[i].checked" [formControlName]="i" value="{{tags[i]}}" />
+          {{ tags[i].label }}
+
+        </label>
+      </div>
+
+    </section>
+
+    <section class="page-layout">
+      <div class="row">
+        <div class="col">
+          <label class="">
+            <input type="checkbox" [disabled]="true" formControlName="published">
+            Published
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-layout">
+      <div class="row">
+        <div class="col align-self-start">
+          <button class="btn" type="submit" [disabled]="!eventForm.valid">Save</button>
+        </div>
+        <div class="col align-self-end text-right">
+          <label class="confirmDelete">
+            <input type="checkbox" (change)="confirmDelete($event)">
+            Confirm
+          </label>
+          <button class="btn error" type="button" (click)="deleteItem()" [disabled]="!deleteConfirmed">Delete</button>
+        </div>
+      </div>
+    </section>
+  </form>
+
+</section>

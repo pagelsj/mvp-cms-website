@@ -1,0 +1,28 @@
+<section class="registration-confirmation-component">
+	<div>
+		<p *ngIf="!!username">Please enter the pin that was emailed to you at:<br> <strong>{{username}}</strong></p>
+		<p *ngIf="!username">Please confirm your registration by entering your email address and the pin number that was sent to you.</p>
+	</div>
+
+	<form [formGroup]="confirmationForm" (ngSubmit)="onSubmit()">
+
+		<div class="row" *ngIf="!username">
+			<div class="col">
+				<input type="text" placeholder="Confirm your email address" formControlName="username">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col">
+				<input type="text" placeholder="Pin" formControlName="pin">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col">
+				<button type="submit" [disabled]="!confirmationForm.valid">Submit</button>
+			</div>
+		</div>
+	</form>
+
+</section>

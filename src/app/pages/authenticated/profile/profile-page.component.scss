@@ -1,0 +1,27 @@
+@import '../../../../variables.scss';
+
+.profile-page {
+	margin: 0 auto;
+	max-width: $page-width;
+	// width: 100%;
+
+  .row {
+    margin-bottom: 10px;
+  }
+
+  .bg {
+    // background: url('https://cdn.pixabay.com/photo/2015/05/08/01/10/chrysanthemum-757439_1280.jpg') 100%;
+    background: url('https://cdn.pixabay.com/photo/2014/04/05/11/32/stone-316225_1280.jpg') 100%;
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+
+  .tile {
+    box-shadow: 0px 0px 50px -5px $color_3;
+    background: rgba(255,255,255, 0.95) !important;
+  }
+}

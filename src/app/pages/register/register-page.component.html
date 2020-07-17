@@ -1,0 +1,47 @@
+<section class="register-page">
+  <!-- <div class="image-container" *ngIf="content.image">
+    <img [src]="content.image"/>
+  </div> -->
+
+  <div class="container">
+    <div class="row">
+
+      <section class="tile col-12 col-lg-6 col-sm-6"
+        *ngIf="!registered"
+      >
+        <header>Register</header>
+        <register
+          *ngIf="!userCreated"
+          (username)="confirmUser($event)"
+        ></register>
+
+        <registration-confirmation *ngIf="userCreated" [username]="userCreated"></registration-confirmation>
+
+      </section>
+
+      <section class="tile col-12 col-lg-6 col-sm-6"
+        *ngIf="registered"
+      >
+        <header>Confirm registration</header>
+
+        <registration-confirmation></registration-confirmation>
+
+      </section>
+
+      <section class="col tile bg_1 col-10 col-lg-5 col-sm-5 offset-1">
+        <header>Benefits</header>
+        <p>Registering will allow you to:</p>
+        <ul>
+          <li>Join a tribe</li>
+          <li>Becoming an ambassador</li>
+          <li>Joining a community</li>
+          <li>Register for events</li>
+          <li>Save articles</li>
+          <li>Get notifications for new events and articles</li>
+
+        </ul>
+      </section>
+    </div>
+  </div>
+
+</section>

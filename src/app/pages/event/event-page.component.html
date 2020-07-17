@@ -1,0 +1,93 @@
+<section class="event-page" *ngIf="content">
+  <section class="container">
+    <div class="row">
+
+      <div class="col-12 col-lg-8">
+        <section class="tile">
+          <header>{{content.title}}</header>
+          <p [innerHTML]="content.about | sanitizeHtml"></p>
+        </section>
+      </div>
+
+      <div class="col-12 col-lg-4">
+        <section class="tile bg_1">
+          <header>Details</header>
+          <div class="container">
+            <div class="row">
+              <span class="col-4">Speaker:</span>
+              <span class="col-8" [innerHTML]="content.speaker"></span>
+
+              <span class="col-4">Price:</span>
+              <span class="col-8" [innerHTML]="content.price | currency: 'GBP'"></span>
+
+              <span class="col-4">Location:</span>
+              <span class="col-8" [innerHTML]="content.eventLocation"></span>
+
+              <span class="col-4">Date:</span>
+              <span class="col-8">
+                <span [innerHTML]="content.eventDate | date : 'shortDate'"></span>
+              </span>
+
+              <span class="col-4">Time:</span>
+              <span class="col-8">
+                <span [innerHTML]="content.timeStart | date : 'shortTime'"></span>
+                -
+                <span [innerHTML]="content.timeEnd | date : 'shortTime'"></span>
+              </span>
+
+              <span class="col-4">Spaces:</span>
+              <span class="col-8">
+                <span [innerHTML]="content.eventCapacity - content.registered"></span> /
+                <span [innerHTML]="content.eventCapacity"></span>
+              </span>
+            </div>
+            <div class="row">
+              <div class="col">
+                <a class="btn" style="display:block;">Book</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 map">
+        <google-map
+          height="100%"
+          width="100%"
+          [center]="mapCenter"
+        >
+          <map-marker
+            [position]="content.eventGeoLocation"
+            [title]="content.title"
+          ></map-marker>
+        </google-map>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12" *ngIf="content.tags">
+        <div class="tile bg_1">
+          <header>Related topics</header>
+          <nav>
+            <span *ngFor="let tag of content.tags">
+              <a [href]="tag.url" class="tags__link">
+                {{ tag }}
+              </a>
+            </span>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- <section class="row">
+      <div class="col">
+        <div class="tile">
+          <profile></profile>
+        </div>
+      </div>
+    </section> -->
+  </section>
+
+</section>

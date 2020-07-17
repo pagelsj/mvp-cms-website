@@ -1,0 +1,71 @@
+<section class="register-component">
+
+	<form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="containers">
+		<div class="row">
+			<!-- <div class="col-4">
+				<label for="firstName">First name</label>
+			</div> -->
+			<div class="col">
+				<input type="text" placeholder="First name" formControlName="firstname">
+			</div>
+		</div>
+
+		<div class="row">
+			<!-- <div class="col-4">
+				<label for="lastName">Last name</label>
+			</div> -->
+			<div class="col">
+				<input type="text" placeholder="Last name" formControlName="lastname">
+			</div>
+		</div>
+
+		<div class="row">
+			<!-- <div class="col-4">
+				<label for="username">Email</label>
+			</div> -->
+			<div class="col">
+				<input type="text" placeholder="Email" formControlName="username">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col">
+				<div class="row">
+					<!-- <div class="col-4">
+						<label for="password">Password</label>
+					</div> -->
+					<div class="col">
+						<input type="password" placeholder="Password *" formControlName="password">
+					</div>
+
+				</div>
+
+				<div class="row">
+					<!-- <div class="col-4">
+						<label for="confirmPassword">Confirm Password</label>
+					</div> -->
+					<div class="col">
+						<input type="password" placeholder="Confirm Password *" formControlName="confirmPassword">
+					</div>
+				</div>
+			</div>
+				<div class="col-5 offset-0">
+						<p class="sub">Passwords must contain:
+						<br>- 8 or more characters
+						<br>- 1 Uppercase character
+						<br>- 1 lowercase character
+						<br>- 1 special character
+						<br>- 1 number</p>
+					</div>
+
+		</div>
+
+
+		<div class="row">
+			<div class="col">
+				<button type="submit" [disabled]="!registerForm.valid">Submit</button>
+			</div>
+		</div>
+	</form>
+
+</section>

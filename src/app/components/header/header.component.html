@@ -1,0 +1,23 @@
+<div [ngClass]="{'open': open}">
+	<section class="header">
+		<div class="container">
+			<div class="row">
+
+				<div class="col-12 col-lg-4">
+					<a href="/"><img src="assets/iamArla-black.svg" class="logo" /></a>
+					<span (click)="open=!open" class="open_menu d-lg-none d-block"><i class="fas fa-bars"></i></span>
+				</div>
+
+				<nav class="nav col align-self-end">
+					<span *ngFor="let item of navigation" class="nav__item">
+						<a [routerLink]="item.link" class="nav__item--link">{{item.label}}</a>
+					</span>
+				</nav>
+
+				<app-user-navigation></app-user-navigation>
+
+			</div>
+		</div>
+	</section>
+	<div class="overlay"></div>
+</div>

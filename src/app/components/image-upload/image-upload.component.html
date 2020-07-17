@@ -1,0 +1,26 @@
+<section class="image-upload">
+
+  <form [formGroup]="uploadForm">
+
+    <div class="row">
+      <div class="col">
+        <label for="imageFile" class="image-container">
+          <img [src]="selectedImage" class="pickImage" />
+        </label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <input
+          type="file"
+          formControlName="imageFile"
+          id="imageFile"
+          class="file-input"
+          (change)="processFile($event)">
+      </div>
+    </div>
+
+  </form>
+
+</section>

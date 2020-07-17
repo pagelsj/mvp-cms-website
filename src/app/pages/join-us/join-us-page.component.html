@@ -1,0 +1,94 @@
+<section class="join-us-page container">
+	<section class="tile bg_1">
+    <header>Join us</header>
+
+    <form [formGroup]="joinUsForm" (ngSubmit)="onSubmit()">
+
+      <section class="">
+
+        <div class="row">
+          <!-- <div class="col-2">
+            <label for="firstname">Name</label>
+          </div> -->
+
+          <div class="col-6 col-lg-2">
+            <input type="text" formControlName="firstname" placeholder="Firstname *">
+          </div>
+        <!-- </div>
+        <div class="row"> -->
+          <div class="col-6 col-lg-2">
+            <input type="text" formControlName="lastname" placeholder="Lastname *">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-lg-4">
+            <input type="text" formControlName="email" placeholder="Email *">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-lg-4">
+            <input type="text" formControlName="mobile" placeholder="Mobile (Optional)">
+          </div>
+        </div>
+
+
+        <div class="row">
+          <!-- <div class="col-2">
+            <label for="firstname">Occupation</label>
+          </div> -->
+          <div class="col-12 col-lg-4">
+            <label for="occupation">How would you best describe your current occupation?</label><br>
+            <select formControlName="occupation">
+              <!-- <option [ngValue]="null">Occupation *</option> -->
+              <option *ngFor="let occupationType of occupationTypes" [ngValue]="occupationType">{{occupationType}}</option>
+            </select>
+
+            <textarea *ngIf="joinUsForm.get('occupation').value == 'Other'" placeholder="Please give us more details" formControlName="occupationOther"></textarea>
+          </div>
+        </div>
+
+        <div class="row">
+          <!-- <div class="col-2">
+            <label for="firstname">Succeeding in</label>
+          </div> -->
+          <div class="col-12 col-lg-4">
+            <label for="succeeding">What are you currently succeeding at?</label><br>
+            <select formControlName="succeeding">
+              <!-- <option [ngValue]="null">Succeeding *</option> -->
+              <option *ngFor="let succeedingType of succeedingTypes" [ngValue]="succeedingType">{{succeedingType}}</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row">
+          <!-- <div class="col-2">
+            <label for="firstname">Support in</label>
+          </div> -->
+          <div class="col-12 col-lg-4">
+            <label for="support">What would you like support in?</label><br>
+            <select formControlName="support">
+              <!-- <option [ngValue]="null">Support *</option> -->
+              <option *ngFor="let supportType of supportTypes" [ngValue]="supportType">{{supportType}}</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 col-lg-4">
+            <label for="online">Would you prefer online or offline tools?</label><br>
+            <!-- <input type="text" formControlName="online" placeholder="Online *"> -->
+            <label class="col-4"><input type="radio" formControlName="online" value="online" id="onlineTools"> Online</label>
+            <label class="col-4"><input type="radio" formControlName="online" value="offline" id="OfflineTools"> Offline</label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col align-self-start">
+            <button class="btn" type="submit" [disabled]="!joinUsForm.valid">Submit</button>
+          </div>
+        </div>
+
+      </section>
+    </form>
+  </section>
+</section>

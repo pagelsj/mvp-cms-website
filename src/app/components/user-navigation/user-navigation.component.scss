@@ -1,0 +1,44 @@
+@import "../../../variables.scss";
+
+.user-navigation {
+  margin-top: 3px;
+
+  .user-nav {
+    position: relative;
+
+    &__main {
+      padding: 0 $padding;
+      i{
+        display: inline-block;
+        vertical-align: middle;
+        // margin-top: 3px;
+      }
+    }
+    &:hover{
+      .open {
+        display: block !important;
+      }
+
+    }
+    &__options {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background: $color_lightest;
+
+      &--item {
+        display: block;
+        width: 200px;
+        padding: $padding/2;
+        text-align: right;
+        border-top: solid 1px $color_1;
+        text-decoration: none;
+      }
+    }
+  }
+  .logout {
+    color: $color_error;
+    cursor: pointer;
+  }
+}

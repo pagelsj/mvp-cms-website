@@ -1,0 +1,35 @@
+@import '../../../variables.scss';
+
+.article-page {
+  padding-top: $padding*2;
+  .image-container {
+    width: 100%;
+    max-height: none;
+    overflow: hidden;
+    margin-bottom: $padding;
+
+    img {
+      width: 100%;
+      // margin-top: -25%;
+    }
+  }
+
+  &__details {
+    background: $color_1;
+  }
+
+  .tags {
+    margin-top: 50px;
+
+    &__link {
+      display: inline-block;
+      margin: 0 10px 10px 0;
+      padding: 5px 15px;
+      background: $color_5;
+      color: $color_1;
+      border-radius: $border-radius;
+      font-size: 1rem;
+    }
+  }
+
+}

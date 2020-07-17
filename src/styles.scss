@@ -1,0 +1,69 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "./variables";
+@import "./styling/misc";
+@import "./styling/buttons";
+@import "./styling/badges";
+@import "./styling/tiles";
+@import "./styling/inputs";
+@import "./styling/typography.scss";
+
+html,
+body {
+  font-family: mr-eaves-modern, sans-serif;
+  position:relative;
+  height: 100%;
+}
+body{
+
+  margin-top: 0;
+  font-size: 1.3em;
+  font-weight: 100;
+  // background: $color_1;
+
+}
+.tiled {
+  padding-top: 65px;
+}
+
+
+.row {
+  margin-top: $padding;
+
+  &:first-child{
+    margin-top: 0;
+  }
+}
+
+.page-layout {
+  background: #FFF;
+
+  margin: 0 auto 50px;
+  border-radius: 3px;
+  max-width: $page-width;
+  padding: 25px;
+  width: 100%;
+  color: $color_font;
+  position: relative;
+  box-shadow: 0px 5px 15px -5px $color_2;
+
+  &--first {
+    margin-top: -56px;
+  }
+}
+
+.image-container {
+  max-height: 450px;
+  .overlay {
+    max-height: 450px;
+  }
+}
+@media(max-width: $size-md){
+  .image-container {
+    max-height: 250px;
+    .overlay {
+      max-height: 250px;
+    }
+  }
+}
+

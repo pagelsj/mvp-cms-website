@@ -1,0 +1,21 @@
+.badge {
+  border: 0;
+  border-radius:$border-radius;
+  padding: 5px 15px;
+  font-size: 1rem;
+  background: $color_5;
+  color: white;
+  font-weight: 100;
+  margin: $padding/2 $padding/2 0 0;
+  vertical-align: middle;
+
+  &:hover {
+    color: white;
+  }
+
+  &.external {
+    background: $color_2;
+    color: $color_font;
+    vertical-align: top;
+  }
+}

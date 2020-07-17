@@ -1,0 +1,50 @@
+<section class="tag-search-page" *ngIf="content || externalContent">
+
+  <div class="container">
+  	<header class="title">Related to <em><strong>{{tag}}</strong></em></header>
+
+    <div class="row results" *ngIf="content && content.length">
+      <div *ngFor="let item of content" class="col-12 col-lg-8">
+
+        <section class="tile">
+          <header>
+            <a [href]="'/article/' + item.title" [title]="item.title">{{item.title}}</a>
+          </header>
+          <p>
+            <span [innerHTML]="item.intro | sanitizeHtml"></span>
+            <a [href]="'/article/' + item.title" [title]="item.title">...read more</a>
+          </p>
+          <p>
+            <span *ngFor="let tag of item.tags">
+              <a [href]="'/tag/'+tag" [title]="tag" class="badge">{{tag}}</a>
+            </span>
+          </p>
+        </section>
+
+      </div>
+    </div>
+
+    <div class="row results" *ngIf="externalContent && externalContent.length">
+      <div *ngFor="let item of externalContent" class="col-12 col-lg-8">
+
+        <section class="tile">
+          <header>
+            <a [href]="'/external-article/' + item.title" [title]="item.title">{{item.title}} <span class="badge external">External article</span></a>
+          </header>
+          <p>
+            <span [innerHTML]="item.synopsis | sanitizeHtml"></span>
+            <a [href]="'/external-article/' + item.title" [title]="item.title">...read more</a>
+          </p>
+          <p>
+            <span *ngFor="let tag of item.tags">
+              <a [href]="'/tag/'+tag" [title]="tag" class="badge">{{tag}}</a>
+            </span>
+          </p>
+        </section>
+
+      </div>
+    </div>
+
+  </div>
+
+</section>

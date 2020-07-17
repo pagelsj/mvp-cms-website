@@ -1,0 +1,76 @@
+<section class="profile-page tiled">
+  <div class="bg"></div>
+
+  <div class="row justify-content-center">
+    <div class="tile col-11 col-md-12">
+    	<header>Profile</header>
+
+      <div class="row">
+        <div class="col-3">
+          <image-upload [config]="imageUploadConfig" (imageUrl)="profileImage($event)"></image-upload>
+        </div>
+        <div class="col">
+          <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+              <div class="col-3">
+                <label for="firstName">First name</label>
+              </div>
+              <div class="col">
+                {{ profile.given_name }}
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-3">
+                <label for="lastName">Last name</label>
+              </div>
+              <div class="col">
+                {{ profile.family_name }}
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-3">
+                <label for="email">Email</label>
+              </div>
+              <div class="col">
+                {{ profile.email }}
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-3">
+                <label for="dob">Date of Birth</label>
+              </div>
+              <div class="col">
+                <input type="text" formControlName="dob" placeholder="dd/mm/yy" bsDatepicker>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-3">
+                <label for="bio">Biography</label>
+              </div>
+              <div class="col">
+                <!-- <input type="text" formControlName="biography" placeholder="Biography"> -->
+
+                <quill-editor formControlName="bio" placeholder="Biography"></quill-editor>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-3">
+                <label for="website">Website</label>
+              </div>
+              <div class="col">
+                <input type="text" formControlName="website" placeholder="Website">
+              </div>
+            </div>
+
+            <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

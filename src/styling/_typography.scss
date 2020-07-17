@@ -1,0 +1,33 @@
+@import "../variables";
+
+
+input,
+option,
+select,
+textarea {
+  // font-family: mr-eaves-modern, sans-serif;
+  // font-size: 1rem;
+}
+a {
+  color: $color_5;
+
+  &:hover {
+    color: $color_5;
+  };
+}
+.introduction {
+  font-size: 2rem;
+  text-align: center;
+  text-shadow: 1px 1px 3px #ccc;
+}
+
+header {
+  font-size: 2rem;
+  padding-bottom: $padding / 2;
+}
+
+@media(max-width: $size-md){
+  .introduction {
+    font-size: 1.7rem;
+  }
+}

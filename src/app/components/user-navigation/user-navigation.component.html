@@ -1,0 +1,24 @@
+<section class="user-navigation">
+  <section class="user-nav">
+
+    <span class="user-nav__main"><i class="fas fa-user"></i></span>
+
+    <nav class="user-nav__options open" *ngIf="navigation">
+      <span *ngFor="let item of navigation">
+        <a
+          class="user-nav__options--item"
+          *ngIf="item.active"
+          [href]="item.link"
+          [title]="item.label"
+        >{{item.label}}</a>
+      </span>
+      <a
+        class="user-nav__options--item logout"
+        *ngIf="authenticated"
+        (click)="logout()"
+        title="Logout"
+      >Logout</a>
+    </nav>
+
+  </section>
+</section>

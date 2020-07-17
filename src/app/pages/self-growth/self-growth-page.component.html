@@ -1,0 +1,45 @@
+<section class="self-growth-page">
+  <div class="image-container">
+    <img src="https://cdn.pixabay.com/photo/2016/04/04/17/37/stone-pile-1307644_1280.jpg" />
+  </div>
+
+  <div class="container">
+
+    <section *ngFor="let category of categories; let i = index ">
+      <div class="row">
+        <div class="col-12 col-lg-9" *ngIf="content[category].length">
+          <h2>{{category}}</h2>
+          <div *ngFor="let item of content[category]" class="tile">
+            <header>
+              <a *ngIf="!item.synopsis" [href]="'/article/'+item.title" [title]="item.title">
+                {{item.title}}
+              </a>
+              <a *ngIf="item.synopsis" [href]="'/external-article/'+item.title" [title]="item.title">
+                {{item.title}}
+                <span *ngIf="item.synopsis" class="badge external">External article</span>
+              </a>
+              <!--  <span class="badge external">External</span> -->
+            </header>
+            <p>
+              <span *ngIf="item.intro">
+                <span [innerHTML]="item.intro | sanitizeHtml"></span>
+                <a [href]="'/article/' + item.title">...read more</a>
+              </span>
+
+              <span *ngIf="item.synopsis">
+                <span [innerHTML]="item.synopsis | sanitizeHtml"></span>
+                <a [href]="'/external-article/' + item.title">...read more</a>
+              </span>
+            </p>
+            <p>
+              <span *ngFor="let tag of item.tags">
+                <a [href]="'/tag/'+tag" [title]="tag" class="badge">{{tag}}</a>
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</section>

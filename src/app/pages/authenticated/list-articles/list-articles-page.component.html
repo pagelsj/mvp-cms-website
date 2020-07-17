@@ -1,0 +1,175 @@
+<section class="list-articles-page tiled">
+  <div class="bg"></div>
+
+  <div class="row justify-content-center">
+    <div class="tile col-11 col-md-12">
+  <!-- <section class="page-layout" *ngIf="articleList"> -->
+    <header>
+      <div class="row">
+        <div class="col align-self-start">
+          <a class="btn" href="auth/add-article">New article</a>
+        </div>
+      </div>
+    </header>
+  <!--
+  </div></div>
+
+  <div class="row justify-content-center">
+    <div class="tile col-11 col-md-12"> -->
+  <!-- <section class="page-layout" *ngIf="articleList"> -->
+      <table >
+        <thead>
+          <tr>
+            <td class="title">
+              Title
+            </td>
+            <td class="category">
+              Category
+            </td>
+            <td class="last-update">
+              Last update
+            </td>
+            <td class="published">
+              Published
+            </td>
+            <td class="views">
+              Views
+            </td>
+            <td class="rating">
+              Rating
+            </td>
+            <td class="known-shares">
+              Shares
+            </td>
+            <td class="view">
+              View
+            </td>
+            <td class="edit">
+              Edit
+            </td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let article of articleList">
+            <td class="title" title="Title">
+              {{ article.title }}
+            </td>
+            <td class="category" title="Category">
+              {{ article.category }}
+            </td>
+            <td class="last-update" title="Last update">
+              {{ article.updatedAt | date:'short'}}
+            </td>
+            <td class="published" title="Published">
+              <i class="fas fa-check success" *ngIf="article.published == 'true'"></i>
+              <i class="fas fa-times error" *ngIf="article.published == 'false'"></i>
+            </td>
+            <td class="views" title="Views">
+              0
+            </td>
+            <td class="rating" title="Rating">
+              4/5
+            </td>
+            <td class="known-shares" title="Known shares">
+              10
+            </td>
+            <td class="view" title="View">
+              <a [href]="'/article/' + article.title" title="View">
+                <i class="fas fa-eye"></i>
+              </a>
+            </td>
+            <td class="edit" title="Edit">
+              <a [href]="'/auth/edit-article/' + article.title" title="Edit">
+                <i class="far fa-edit"></i>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="tile col-11 col-md-12">
+  <!-- <section class="page-layout" *ngIf="articleList"> -->
+    <header>
+      <div class="row">
+        <div class="col align-self-start">
+          <a class="btn" href="auth/add-external-article">New external article</a>
+        </div>
+      </div>
+    </header>
+    <table >
+        <thead>
+          <tr>
+            <td class="title">
+              Title
+            </td>
+            <td class="category">
+              Category
+            </td>
+            <td class="last-update">
+              Last update
+            </td>
+            <td class="published">
+              Published
+            </td>
+            <td class="views">
+              Views
+            </td>
+            <td class="rating">
+              Rating
+            </td>
+            <td class="known-shares">
+              Shares
+            </td>
+            <td class="view">
+              View
+            </td>
+            <td class="edit">
+              Edit
+            </td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let article of externalArticleList">
+            <td class="title" title="Title">
+              {{ article.title }}
+            </td>
+            <td class="category" title="Category">
+              {{ article.category }}
+            </td>
+            <td class="last-update" title="Last update">
+              {{ article.updatedAt | date:'short'}}
+            </td>
+            <td class="published" title="Published">
+              <i class="fas fa-check success" *ngIf="article.published == 'true'"></i>
+              <i class="fas fa-times error" *ngIf="article.published == 'false'"></i>
+            </td>
+            <td class="views" title="Views">
+              0
+            </td>
+            <td class="rating" title="Rating">
+              4/5
+            </td>
+            <td class="known-shares" title="Known shares">
+              10
+            </td>
+            <td class="view" title="View">
+              <a [href]="'/external-article/' + article.title" title="View">
+                <i class="fas fa-eye"></i>
+              </a>
+            </td>
+            <td class="edit" title="Edit">
+              <a [href]="'/auth/edit-external-article/' + article.title" title="Edit">
+                <i class="far fa-edit"></i>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+
+      </table>
+
+    </div>
+  </div>
+
+</section>

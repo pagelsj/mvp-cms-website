@@ -1,0 +1,13 @@
+@import '../../../variables.scss';
+
+.tag-search-page {
+  .title {
+    margin: $padding 0 0;
+  }
+  .results {
+    margin-top: 0;
+  }
+  .tile {
+    padding: $padding/2 0 $padding;
+  }
+}

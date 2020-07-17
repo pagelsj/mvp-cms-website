@@ -1,0 +1,39 @@
+<section class="external-article-page" *ngIf="content">
+  <div class="image-container" *ngIf="content.image">
+    <img [src]="content.image" />
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8  col-12">
+        <section class="tile">
+
+        	<header>{{content.title}} <span class="badge external">External article</span></header>
+          <p [innerHTML]="content.synopsis | sanitizeHtml"></p>
+          <p><a [href]="content.articleUrl" target="_blank" class="btn">Read <i class="fas fa-external-link-alt"></i></a></p>
+
+        </section>
+      </div>
+      <div class="col-lg-4 col-12" *ngIf="content.tags && content.tags.length">
+        <div class="tile bg_1">
+          <header>Related topics</header>
+          <nav>
+            <span *ngFor="let tag of content.tags">
+              <a [href]="'/tag/'+tag" class="badge">
+                {{ tag }}
+              </a>
+            </span>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <profile [userId]="content.userId"></profile>
+      </div>
+    </div>
+
+  </div>
+
+</section>

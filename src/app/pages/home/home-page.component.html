@@ -1,0 +1,77 @@
+<section class="home-page">
+  <div class="image-container">
+
+    <div class="overlay align-items-center row no-gutter">
+      <div class="row justify-content-center align-items-center">
+        <div class="col-11 col-md-9">
+          <section class="tile introduction">
+            <p>IamArla is the collective that is stamping out the long-term effects of abuse and violence on young girls and women. Your story shapes you, it doesn't make you. IamArla aims to empower, support and elevate women affected by abuse and violence, giving them the chance they deserve to become our powerful leaders of tomorrow.</p>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row justify-content-center">
+
+      <!-- <div class="col-10">
+        <section class="tile introduction">
+          <p>IamArla is the collective that is stamping out the long-term effects of abuse and violence on young girls and women. Your story shapes you, it doesn't make you. IamArla aims to empower, support and elevate women affected by abuse and violence, giving them the chance they deserve to become our powerful leaders of tomorrow.</p>
+        </section>
+      </div> -->
+    </div>
+    <div class="row" *ngIf="latestArticles.length || latestEvents.length">
+      <div class="col-12 col-md-6" *ngIf="latestArticles.length">
+        <section class="tile bg_1">
+          <header>Latest articles</header>
+          <ul class="latestLists">
+            <li *ngFor="let article of latestArticles">
+              <i class="fas fa-arrow-circle-right"></i>
+              <a *ngIf="!article.synopsis" href="/article/{{article.title}}" [title]="article.title">
+                {{article.title}}
+              </a>
+              <a *ngIf="article.synopsis" href="/external-article/{{article.title}}" [title]="article.title">
+                {{article.title}}
+                <span class="badge external">External article</span>
+              </a>
+            </li>
+          </ul>
+        </section>
+      </div>
+      <div class="col-12 col-md-6" *ngIf="latestEvents.length">
+        <section class="tile bg_1">
+          <header>Latest events</header>
+          <ul class="latestLists">
+            <li *ngFor="let event of latestEvents">
+              <i class="fas fa-arrow-circle-right"></i>
+              <a href="/event/{{event.title}}" [title]="event.title">
+                {{ event.title }} ({{event.eventDate }})
+              </a>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </div>
+
+    <div class="row">
+
+      <div class="col-12">
+        <section class="tile">
+        	<header>Thank You</header>
+
+          <p>IamArla couldn't accomplish its' goals without the help of supporters like you. Thank you for your time and donations that makes this possible!</p>
+        </section>
+      </div>
+
+      <div class="col-12">
+        <section class="tile">
+
+        	<header>Get Involved!</header>
+        	<p>We are always looking for incredible people to help us make our vision a reality. We'll help you find a way to work with us that best suits you.</p>
+        </section>
+      </div>
+
+    </div>
+  </div>
+</section>

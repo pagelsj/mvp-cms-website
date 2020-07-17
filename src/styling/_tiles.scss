@@ -1,0 +1,13 @@
+@import "../variables";
+
+.tile {
+  display: inline-block;
+  padding: $padding /2 $padding $padding;
+  border-radius: $border-radius;
+  width: 100%;
+
+  header {
+    font-size: 2rem;
+    padding-bottom: $padding / 2;
+  }
+}

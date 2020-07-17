@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="128" height="128" viewBox="0 0 128 128">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        fill-rule: evenodd;
+        filter: url(#filter);
+      }
+    </style>
+    <filter id="filter" x="4.313" y="6.25" width="119.938" height="116" filterUnits="userSpaceOnUse">
+      <feFlood result="flood"/>
+      <feComposite result="composite" operator="in" in2="SourceGraphic"/>
+      <feBlend result="blend" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <path id="I_._AM_._ARLA" data-name="I . AM . ARLA" class="cls-1" d="M114.753,118.017a17.571,17.571,0,0,1-6.218-7.635L64.681,6.251H63.208q0,3.575-6.055,16.732l-36.982,87.4a18.669,18.669,0,0,1-6.382,7.635,14.37,14.37,0,0,1-8.018,2.6H4.3v1.625H37.19v-1.625H35.717a6.146,6.146,0,0,1-5.154-2.193,6.782,6.782,0,0,1-1.718-4.061,11.94,11.94,0,0,1,.654-3.818L40.463,82.765H84.644l10.473,27.617a12.226,12.226,0,0,1,.655,3.9,6.857,6.857,0,0,1-1.718,4.143,6.146,6.146,0,0,1-5.155,2.193H87.426v1.625h36.818v-1.625h-1.309A14.6,14.6,0,0,1,114.753,118.017ZM63.044,25.745L82.681,77.892H42.426Z"/>
+</svg>

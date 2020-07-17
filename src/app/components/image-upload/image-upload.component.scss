@@ -1,0 +1,19 @@
+.image-upload {
+  .file-input {
+    display: none;
+  }
+  .image-container {
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    overflow: hidden;
+
+    img {
+      height: 150px;
+      width: 150px;
+      background: url("/assets/profile.png");
+      display: inline-block;
+      background-size: 150px;
+    }
+  }
+}

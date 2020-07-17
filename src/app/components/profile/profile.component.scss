@@ -1,0 +1,13 @@
+@import "../../../variables";
+
+.profile {
+  &__image {
+      border-radius: $border-radius;
+      overflow: hidden;
+      margin-bottom: $padding;
+
+    img {
+      width: 100%;
+    }
+  }
+}

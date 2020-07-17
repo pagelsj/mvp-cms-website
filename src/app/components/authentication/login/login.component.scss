@@ -1,0 +1,21 @@
+@import "../../../../variables";
+.login-component {
+
+  input {
+    font-weight: 100;
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid $color_2;
+    margin-bottom: $padding;
+  }
+  .btn {
+    font-weight: 100;
+    width: 100%;
+  }
+
+  .forgotten-password {
+    display: block;
+    text-align: center;
+    margin: $padding 0 0;
+  }
+}

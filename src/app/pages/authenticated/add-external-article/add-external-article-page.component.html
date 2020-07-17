@@ -1,0 +1,90 @@
+<section class="add-external-article-page">
+
+  <div class="image-container">
+    <image-upload
+      [config]="newArticleConfig"
+      [selectedImage]="contentImageUrl"
+      (imageUrl)="profileImage($event)"></image-upload>
+  </div>
+
+  <form [formGroup]="articleForm" (ngSubmit)="onSubmit()">
+
+    <section class="page-layout page-layout--first">
+      <div class="row">
+        <div class="col">
+          <input type="text" formControlName="title" placeholder="title">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <quill-editor formControlName="synopsis"></quill-editor>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <input type="text" formControlName="articleUrl" placeholder="URL">
+        </div>
+      </div>
+
+      <div class="row">
+        <h3 class="col">Tags</h3>
+      </div>
+
+      <div class="row">
+        <label
+          class="col-4"
+          formArrayName="tags"
+          *ngFor="let tag of articleForm.get('tags')['controls']; let i = index">
+
+          <input type="checkbox" [checked]="tags[i].checked" [formControlName]="i" value="{{tags[i]}}" />
+          {{ tags[i].label }}
+
+        </label>
+      </div>
+
+      <div class="row">
+        <h3 class="col">Page category</h3>
+      </div>
+      <div class="row">
+        <label
+          class="col-4"
+          *ngFor="let cat of categories">
+
+          <input type="radio" formControlName="category" [value]="cat" />
+          {{ cat }}
+
+        </label>
+      </div>
+
+    </section>
+
+    <section class="page-layout">
+      <div class="row">
+        <div class="col">
+          <label class="">
+            <input type="checkbox" formControlName="published">
+            Published
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-layout">
+      <div class="row">
+        <div class="col align-self-start">
+          <button class="btn" type="submit" [disabled]="!articleForm.valid">Save</button>
+        </div>
+        <div class="col align-self-end text-right">
+          <label class="confirmDelete">
+            <input type="checkbox" (change)="confirmDelete($event)">
+            Confirm
+          </label>
+          <button class="btn error" type="button" (click)="deleteItem()" [disabled]="!deleteConfirmed">Delete</button>
+        </div>
+      </div>
+    </section>
+  </form>
+
+</section>

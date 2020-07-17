@@ -1,0 +1,93 @@
+@import "../../../variables.scss";
+
+.header {
+	display: block;
+	background: #FFF;
+	padding: 15px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	max-width: none;
+	box-shadow: 0 5px 20px -10px;
+	z-index: 999;
+
+	.container {
+
+		.logo {
+			width: 180px;
+		}
+
+		.nav {
+			display: block;
+			margin: 0 auto;
+			text-align: right;
+			border-right: 1px solid $color_2;
+
+			&__item {
+				margin: 0 15px;
+
+				&--link {
+					color: $color_font;
+				}
+			}
+		}
+
+	}
+}
+@media(max-width: $size-lg){
+	.header{
+		.logo {
+			display: block;
+			margin: 0 auto;
+		}
+
+		.open_menu {
+			position: absolute;
+			top: 2px;
+			right: 5px;
+		}
+		.nav {
+			position: fixed;
+			width: 80%;
+	    top: 63px;
+	    bottom: 0;
+	    left: -80%;
+	    background: #FFF;
+	    border: solid 2px $color_1;
+	    z-index: 999;
+			transition: left $transition_fast;
+
+			&__item {
+				display: block;
+				margin: 0;
+
+				&--link {
+					padding: $padding/2;
+					display: inline-block;
+				}
+			}
+		}
+	}
+	.overlay {
+		position: fixed;
+		width: 0;
+	  top: 0px;
+	  bottom: 0;
+	  background: rgba(255, 255, 255, 0.8);
+	  left: 0;
+	  z-index: 990;
+		transition: width $transition_fast;
+	}
+
+	.open {
+		.overlay {
+			width: 100%;
+			transition: width $transition_fast;
+		}
+		.nav {
+			left: 0%;
+			transition: left $transition_fast;
+		}
+	}
+}

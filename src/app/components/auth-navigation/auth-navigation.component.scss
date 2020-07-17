@@ -1,0 +1,74 @@
+@import "../../../variables.scss";
+
+.auth-navigation {
+	display: block;
+	padding: 15px;
+	position: fixed;
+	top: 120px;
+	left: -65px;
+	width: 80px;
+	height: 100%;
+	max-width: none;
+	z-index: 990;
+	background-color: $color_2;
+	border-radius: 0 20px;
+
+	transition: left 0.25s, background-color 0.25s;
+
+	&:hover {
+		background-color: transparent;
+		left: 0;
+
+		transition: left 0.25s, background-color 0.25s;
+	}
+
+	.nav {
+		display: inline-block;
+
+		&__item {
+			display: block;
+			width: 55px;
+			overflow: hidden;
+			white-space: nowrap;
+			margin-bottom: 15px;
+			padding: 5px 0;
+
+			&:hover {
+				overflow: visible;
+			}
+
+			&--link {
+				color: $color_3;
+
+				&:hover {
+					text-decoration: none;
+				}
+
+				i {
+					background: $color_5;
+					border-radius: 100%;
+					box-shadow: 2px 2px 7px -4px $color_3;
+
+					color: #FFF;
+					padding: 10px 8px;
+					font-size: 1.7rem;
+					margin-right: 10px;
+					width: 47px;
+					height: 47px;
+    			text-align: center;
+				}
+			}
+			&.logout {
+				position: fixed;
+				bottom: 20px;
+				cursor: pointer;
+
+				i {
+					background: $color_error;
+					padding: 10px;
+				}
+			}
+		}
+	}
+
+}

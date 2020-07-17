@@ -1,0 +1,30 @@
+<section class="login-component">
+
+	<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+		<div class="row">
+			<div class="col">
+				<input type="text" placeholder="Email" formControlName="username">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col">
+				<input type="password" placeholder="Password" formControlName="password">
+			</div>
+		</div>
+
+
+		<div class="row align-items-center">
+			<div class="col">
+				<button type="submit" class="btn" [disabled]="!loginForm.valid">Submit</button>
+			</div>
+		</div>
+		<div class="row align-items-center forgotten-password">
+			<div class="col">
+				<a href="/login">Forgotten password</a>
+			</div>
+		</div>
+	</form>
+
+</section>

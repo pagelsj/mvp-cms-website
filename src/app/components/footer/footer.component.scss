@@ -1,0 +1,59 @@
+@import "../../../variables.scss";
+
+.footer {
+  display: block;
+  background: $color_3;
+  margin-top: $padding * 5;
+  padding: 15px;
+  width: 100%;
+  max-width: none;
+  z-index: 989;
+  margin-top: -60px;
+  position: relative;
+
+  .container {
+
+    .logo {
+      width: 100px;
+    }
+
+    .nav {
+      display: block;
+      margin: 0 auto;
+      text-align: right;
+
+      &__item {
+        margin: 0 15px;
+
+        &--link {
+          color: #FFF;
+        }
+      }
+    }
+  }
+}
+
+@media(max-width: $size-sm){
+  .footer{
+
+    .logo {
+      display: block;
+      margin: 0 auto;
+    }
+
+    .nav {
+      display: inline-block;
+      text-align: center !important;
+      margin-top: $padding !important;
+
+      &__item {
+          display: inline-block;
+          width: 40%;
+
+        &--link {
+          // font-size: 0.9rem;
+        }
+      }
+    }
+  }
+}

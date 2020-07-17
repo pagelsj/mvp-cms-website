@@ -1,0 +1,19 @@
+<section class="profile tile bg_1"><!--  *ngIf="loaded"> -->
+
+  <div class="row">
+    <div class="col-12 col-md-3">
+      <div class="profile__image">
+        <img [src]="image" />
+      </div>
+    </div>
+
+    <div class="col">
+      <header>
+        {{given_name}} {{family_name}}
+      </header>
+      <p><a [href]="website">{{website}}</a></p>
+      <span [innerHTML]="bio"></span>
+    </div>
+  </div>
+
+</section>

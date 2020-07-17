@@ -1,0 +1,18 @@
+<section class="auth-navigation" *ngIf="authenticated">
+
+		<nav class="nav">
+			<span *ngFor="let item of authNavigation" class="nav__item">
+        <a [routerLink]="item.link" class="nav__item--link">
+  				<i class="fas" [ngClass]="item.icon"></i>
+          {{item.label}}
+        </a>
+      </span>
+      <span class="nav__item logout">
+        <a class="nav__item--link" (click)="logout()">
+          <i class="fas fa-sign-out-alt"></i>
+          Logout
+        </a>
+      </span>
+		</nav>
+
+</section>
