@@ -1,27 +1,13 @@
-# IamArla
+# MVP CMS Website
+## About
+This is the UI that I created **quickly** for an MVP project/CMS that I was building.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.19.
+## Setup and deployment
+- First you will need to clone the repo to your local machine and run `npm install`.
+- You will need to have the API's deployed if you with to be able to Login/update content for the website.
+- In the Environments.ts file you will need to update the API endpoint URLs. (We never got to the point of integrating directly Route53 and a domain name. This is the reason for the paths being directly to the APIGateway URLs. It still works though)
+- To run the project locally, run `ng serve` in your terminal and open http://localhost:4200 in your browser.
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+### Disclaimer
+This project was abandoned midway through development. I know the authenticated UI is missing some small things like 'image upload' icons etc.
+There was also a lot of experimenting that occurred during the development of the website, in order to get the most performance out of the website, such as packaging Angular Components and Services in modules rather than have them separately as per the Angular Styleguide.
